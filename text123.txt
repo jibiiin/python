@@ -1,0 +1,12 @@
+name:jbn
+address : vnga
+phone: 897
+_____________
+name:anu
+address :mlp
+phone:879
+_____________
+name:nyn
+address :coi
+phone:09876
+_____________

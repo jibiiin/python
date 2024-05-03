@@ -1,1 +1,7 @@
-hello world
+name:anu
+ address : mkd
+phone: 9744name: jbn
+ address : vnga
+phone: 5840name:& C:/Users/ICS/AppData/Local/Programs/Python/Python311/python.exe d:/jibin/second2.py
+ address :& C:/Users/ICS/AppData/Local/Programs/Python/Python311/python.exe d:/jibin/second2.py
+phone: 3423
