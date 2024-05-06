@@ -19,9 +19,9 @@ def add():
         print(n+" selected succesfully")        
         add()
     elif select==4:
-        file1=open("data.txt","r")    
+        file1=open("data.txt","r")
+        content=file1.read()   
         name=input("enter a name:")
-        content=file1.read()
         if name in content:
             li=list(content.split("\n"))
             data=li.index(name)
@@ -30,16 +30,19 @@ def add():
             newdata=str1.join(li)
             file1=open("data.txt","w")
             file1.write(newdata) 
-            print(name + "Deleted succesfully")
+            print(name + " Deleted succesfully")
+            file.close()
             add()
         else:
             print("No")
-     elif select==3:
+            file.close()
+            add()
+    elif select==3:
         file1=open("data.txt","r")
         content=file1.read()   
         name=input("enter a name:")
-        if name in content:
-            name2=input("Enter the replacing name:")
+        name2=input("Enter the replacing name:")
+        if name in content:           
             li=list(content.split("\n"))
             data=li.index(name)
             li[data]=name2
@@ -53,9 +56,6 @@ def add():
         else:
             print("Name Is Unavailable")
             add()
-        else:
-            print("name is unavaialable")    
     else:
-        print("invalid")    
-add()        
-
+        print("Invalid Option")
+add()
