@@ -13,6 +13,6 @@ file.write("""
               <p>%s</p>
            </body>
 </html>
-""" %(color,title,heading,para))
+""" %(title,color,heading,para))
 print("webpage created successfully")                      
            
