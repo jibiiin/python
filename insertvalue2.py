@@ -1,12 +1,13 @@
 import mysql.connector
 conn=mysql.connector.connect(host="localhost",user="root",passwd="",database="mysql")
 cur=conn.cursor()
-name=input("enter a name")
-mark1=input("enter the mark1")
-mark2=input("enter the mark2")
-if conn:
-    cur.execute("insert into jiji value('%s',%s,%s)"%(name,mark1,mark2))
-    conn.commit()
-    print(cur.execute,"Insert data created success")
-else:
-    print("connection failed")    
+mark=[20,30,40]
+select=int(input("select a number(1 add,2 select,3 edit,4 delete)"))
+if select==1:
+    n=input("enter a mark: ")
+    name.append()
+    print(mark)
+elif select==2:
+    n=input("enter a selected name :")
+    print(n)
+
