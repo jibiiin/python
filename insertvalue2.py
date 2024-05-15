@@ -1,13 +1,13 @@
 import mysql.connector
-conn=mysql.connector.connect(host="localhost",user="root",passwd="",database="mysql")
+conn=mysql.connector.connect(host="localhost",user="root",passwd="",database="mysqll")
 cur=conn.cursor()
-mark=[20,30,40]
-select=int(input("select a number(1 add,2 select,3 edit,4 delete)"))
-if select==1:
-    n=input("enter a mark: ")
-    name.append()
-    print(mark)
-elif select==2:
-    n=input("enter a selected name :")
-    print(n)
+if conn:
+    cur.execute("select *from shadow")
+    result=cur.fetchall()
+    for a in result:
+        print("name :",a[0])
+        print("malayalam :",a[1])
+        print("math :",a[2])
+       
+   
 
