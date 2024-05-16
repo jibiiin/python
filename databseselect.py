@@ -1,7 +1,7 @@
 import mysql.connector
 conn=mysql.connector.connect(host="localhost",user="root",passwd="",database="mysqll")
 cur=conn.cursor()
-n=int(input("select(1 create,2 add,3 update,4 del)"))
+n=int(input("select(1 create,2 add,3 update,4 del,5 select)"))
 if n==1:
     m=input("enter a table name")
     if conn:
@@ -37,4 +37,4 @@ else:
         cur.execute("select from %s where name='%s'"%(m,name))  
         result=cur.fetchall()
         for a in result:
-            print("name :",i[0])      
+            print("name :",a[0])      

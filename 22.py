@@ -1,0 +1,10 @@
+from tkinter import *
+window=Tk()
+window.title("welcome")
+window.geometry("200x300")
+window.resizable(False,False)
+window.configure(background="#8c6d74")
+window.attributes("-topmost",True)
+window.attributes("-alpha",0.9)
+window.iconbitmap("favicon.ico")
+window.mainloop()
