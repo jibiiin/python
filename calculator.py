@@ -36,6 +36,14 @@ def sub():
     math="sub"
     e1.delete(0,END)
 
+def delete():
+    second_value=str(e1.get())
+    global old_value 
+    old_value=second_value
+    global math 
+    math="delete"
+    e1.delete(0,END)
+    
 def equal():
     new_value=str(e1.get())
     e1.delete(0,END)
@@ -48,10 +56,12 @@ def equal():
     elif math=="div":        
         result=int(new_value)/int(old_value)
         e1.insert(0,result)   
-    else:        
+    elif math=="mul":        
         result=int(new_value)*int(old_value)
         e1.insert(0,result)        
-
+    else:
+        del(result)
+        e1.insert(0,result)
 window=Tk()
 window.title("welcome")
 window.geometry("220x300")
@@ -92,6 +102,8 @@ btn14=Button(text=" / ",command=div)
 btn14.place(x=70,y=75)
 btn15=Button(text=" =",command=equal)
 btn15.place(x=70,y=100)
+btn16=Button(text="c ",command=delete)
+btn16.place(x=70,y=125)
 
 
 
