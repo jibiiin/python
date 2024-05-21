@@ -20,6 +20,25 @@ def delete():
     cur.execute("delete from kinter1 where name='%s'"%(n))
     conn.commit()
     print("deleted succesfully")
+
+def select():
+    n=e1.get()   
+    if n=="":
+       message.showinfo("select data","please select from fields")
+    cur.execute("select *from kinter1 where name='%s'"%(n))
+    result=cur.fetchall()    
+    for a in result:        
+       e2.insert(0,a[1])
+       e3.insert(0,a[2])
+
+def update():
+    n=e1.get()    
+    if n=="":
+        message.showinfo("update data","please update fields")
+    
+    cur.execute("update %s set name='%s'where name='%s'"%(n))   
+    conn.commit()
+    print("database updated succesfully")      
         
 window=Tk()
 window.title("welcome")
@@ -45,6 +64,10 @@ btn1=Button(text="  save  ",command=save)
 btn1.place(x=85,y=100)   
 btn2=Button(text=" delete ",command=delete)
 btn2.place(x=125,y=100) 
+btn3=Button(text=" select ",command=select)
+btn3.place(x=150,y=130)
+btn4=Button(text=" update ",command=update)
+btn4.place(x=95,y=140)
 
 window.mainloop()  
  
