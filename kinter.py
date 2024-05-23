@@ -21,8 +21,10 @@ def delete():
     conn.commit()
     print("deleted succesfully")
 
-def select():
-    n=e1.get()        
+def select():      
+    n=e1.get()
+    p=e2.get()
+    a=e3.get()      
     if n=="":
        message.showinfo("select data","please select from fields")
     cur.execute("select *from kinter1 where name='%s'"%(n))
@@ -30,18 +32,32 @@ def select():
     for a in result:        
        e2.insert(0,a[1])
        e3.insert(0,a[2])
-
+    else:
+         message.showinfo("user doesnt exist","please re check")                        
+         cur.execute("INSERT INTO kinter1 VALUE('%s','%s','%s');"%(n,p,a))   
+         conn.commit()
+         print("selected succesfully")           
 
 def update():
     n=e1.get()
     p=e2.get()
-    a=e3.get()  
-    if conn:
-        message.showinfo("update data","please update fields")    
-    cur.execute("update kinter1 set phone='%s',address='%s' where name='%s'"%(p,a,n))   
-    conn.commit()
-    print("database updated succesfully")      
-        
+    a=e3.get()
+    
+    cur.execute("select *from kinter1 where name='%s'"%(n))
+    result=cur.fetchall()  
+    if result:
+         message.showinfo("update data","please update fields")    
+         cur.execute("update kinter1 set phone='%s',address='%s' where name='%s'"%(p,a,n))   
+         conn.commit()
+         print("database updated succesfully")
+         
+    else:       
+         
+         message.showinfo("user cant be updated","please re check")
+         cur.execute("INSERT INTO kinter1 VALUE('%s','%s','%s');"%(n,p,a))  
+         conn.commit()
+         print("added succesfully")       
+            
 window=Tk()
 window.title("welcome")
 window.geometry("220x300")
